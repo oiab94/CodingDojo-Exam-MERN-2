@@ -19,6 +19,7 @@ const KanbanBoard = () => {
 		<>
 		<Container>
 			<Row>
+				{/* Muestra los componentes en Backlog */}
 				<Col className="border border-end-0 border-dark">
 					<Row>
 						<div className="bg-info text-center">
@@ -26,7 +27,7 @@ const KanbanBoard = () => {
 						</div>
 					</Row>
 					<Row>
-						<div className="border-top border-dark pb-2">
+						<div className="border-top border-dark pb-2 overflow-scroll"  style={{height:"470px"}}>
 							{
 								backlog.map((item, index) =>{
 									return <CardKanban key={index} values={item} />
@@ -36,6 +37,7 @@ const KanbanBoard = () => {
 					</Row>
 				</Col>
 				
+				{/* Muestra los componentes que se encuentran en progreso */}
 				<Col className="border border-end-0 border-dark">
 					<Row>
 						<div className="bg-warning text-center">
@@ -43,7 +45,7 @@ const KanbanBoard = () => {
 						</div>
 					</Row>
 					<Row>
-						<div className="border-top border-dark pb-2">
+						<div className="border-top border-dark pb-2 overflow-scroll"  style={{height:"470px"}}>
 							{
 								inProgress.map((item, index) =>{
 									return <CardKanban key={index} values={item} />
@@ -53,6 +55,7 @@ const KanbanBoard = () => {
 					</Row>
 				</Col>
 				
+				{/* Muestra los componentes completados */}
 				<Col className="border border-dark">
 				<Row>
 						<div className="bg-success text-center">
@@ -60,7 +63,7 @@ const KanbanBoard = () => {
 						</div>
 					</Row>
 					<Row>
-						<div className="border-top border-dark pb-2">
+						<div className="border-top border-dark pb-2 overflow-scroll" style={{height:"470px"}}>
 							{
 								completed.map((item, index) =>{
 									return <CardKanban key={index} values={item} />
