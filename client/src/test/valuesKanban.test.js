@@ -10,13 +10,62 @@ const valuesBacklog = [
 		date: "07/13/2020",
 		state: "bg-warning",
 		status: "Start Project"
-	}
+	},
+	{
+		title: "Visit Milan",
+		date: "07/13/2020",
+		state: "bg-warning",
+		status: "Start Project"
+	},
+	{
+		title: "Visit Milan",
+		date: "07/13/2020",
+		state: "bg-warning",
+		status: "Start Project"
+	},
+	{
+		title: "Visit Milan",
+		date: "07/13/2020",
+		state: "bg-warning",
+		status: "Start Project"
+	},
+	{
+		title: "Visit Milan",
+		date: "07/13/2020",
+		state: "bg-warning",
+		status: "Start Project"
+	},
+	{
+		title: "Visit Milan",
+		date: "07/13/2020",
+		state: "bg-warning",
+		status: "Start Project"
+	},
+
 ];
 
 const valuesInProgress = [
 	{
 		title: "Build Portfolio",
 		date: "02/22/2020",
+		state: "bg-success",
+		status: "Move to complete"
+	},
+	{
+		title: "Learn to fly",
+		date: "09/16/2020",
+		state: "bg-success",
+		status: "Move to complete"
+	},
+	{
+		title: "Learn to fly",
+		date: "09/16/2020",
+		state: "bg-success",
+		status: "Move to complete"
+	},
+	{
+		title: "Learn to fly",
+		date: "09/16/2020",
 		state: "bg-success",
 		status: "Move to complete"
 	},
