@@ -5,6 +5,7 @@ import ErrorPage from "../views/ErrorPage.view";
 import Home from "../views/Home.view";
 import KanbanBoard from "../views/KanbanBoard.view";
 import NewProject from "../views/NewProject.view";
+import UserForm from "../views/User.view";
 
 const Index = () => {
 	const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const Index = () => {
 				{
 					path:"/projects/new",
 					element: <NewProject />
+				},
+				{
+					path:"/sign_in",
+					element:<UserForm />
 				}
 			]
 		}
