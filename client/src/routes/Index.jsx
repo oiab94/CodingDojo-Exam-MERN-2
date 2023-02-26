@@ -1,9 +1,9 @@
 import { 
 	createBrowserRouter, 
 	RouterProvider } from "react-router-dom"
-import ErrorPage from "../views/ErrorPage";
-import Home from "../views/Home";
-import KanbanBoard from "../views/KanbanBoard";
+import ErrorPage from "../views/ErrorPage.view";
+import Home from "../views/Home.view";
+import KanbanBoard from "../views/KanbanBoard.view";
 
 const Index = () => {
 	const router = createBrowserRouter([
