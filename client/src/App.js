@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import Index from "./routes/Index";
 
 function App() {
-  return <h1>Hello</h1>;
+  return <Index />;
 }
 
 export default App;
