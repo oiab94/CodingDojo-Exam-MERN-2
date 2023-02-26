@@ -1,4 +1,3 @@
-import { useState } from "react"
 import {Card, Button} from "react-bootstrap";
 
 const CardKanban = (props) => {
