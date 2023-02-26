@@ -16,3 +16,6 @@ app.listen(
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(cors());
+
+// * Conexion a la DB
+require("./configs/mongoose.config");
