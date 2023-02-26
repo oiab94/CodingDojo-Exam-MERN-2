@@ -1,7 +1,8 @@
 import {
 	Container,
 	Row,
-	Col
+	Col,
+	Button
 } from "react-bootstrap"
 import CardKanban from "../components/CardKanban";
 import {
@@ -71,6 +72,11 @@ const KanbanBoard = () => {
 							}
 						</div>
 					</Row>
+				</Col>
+			</Row>
+			<Row className="border border-top-0 border-dark p-2">
+				<Col>
+					<Button variant="outline-primary">Add New Project</Button>
 				</Col>
 			</Row>
 		</Container>
