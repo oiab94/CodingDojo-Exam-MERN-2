@@ -119,7 +119,7 @@ const KanbanBoard = () => {
 				<Col className="border border-dark">
 				<Row>
 						<div className="bg-success text-center">
-							<h2>Conpleted</h2>
+							<h2>Completed</h2>
 						</div>
 					</Row>
 					<Row>
