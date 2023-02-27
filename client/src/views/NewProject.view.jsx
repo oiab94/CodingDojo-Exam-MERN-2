@@ -5,6 +5,7 @@ import {
 	Button, 
 	Card, 
 	Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NewProject = () => {
 	return (
@@ -13,7 +14,7 @@ const NewProject = () => {
 				{/* Despliega el botón de retorno */}
 				<Col>
 					<Row className="justify-content-end mb-2" sm={6}>
-						<Button>Back to dashboard</Button>
+						<Link to="/">Back to dashboard</Link>
 					</Row>
 			
 				{/* Despliega el formulario de nuevo proyecto */}
