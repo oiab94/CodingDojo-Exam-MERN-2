@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
 	Container,
 	Row,
@@ -5,16 +6,16 @@ import {
 	Button
 } from "react-bootstrap"
 import CardKanban from "../components/CardKanban";
-import {
-	valuesBacklog,
-	valuesInProgress,
-	valuesCompleted
-} from "../test/valuesKanban.test";
+import axios from "axios";
 
 const KanbanBoard = () => {
-	const backlog = valuesBacklog;
-	const inProgress = valuesInProgress;
-	const completed = valuesCompleted;
+	const [cards, setCards] = useState([])
+
+	useEffect(() => {
+		axios.get("http://localhost:8000/api/getProjects")
+			.then(projects => {setCards(projects.data)})
+			.catch(err => console.log(err))
+	}, [])
 
 	return (
 		<>
@@ -30,8 +31,14 @@ const KanbanBoard = () => {
 					<Row>
 						<div className="border-top border-dark pb-2 overflow-scroll"  style={{height:"470px"}}>
 							{
-								backlog.map((item, index) =>{
-									return <CardKanban key={index} values={item} />
+								cards.map((item ,index) => {
+									const {title, dueDate, state, status} = item;
+
+									if(state === "bg-warning")
+										return <CardKanban 
+											key={index} 
+											values={{title, dueDate, state, status}} />
+									return null;
 								})
 							}
 						</div>
@@ -47,11 +54,17 @@ const KanbanBoard = () => {
 					</Row>
 					<Row>
 						<div className="border-top border-dark pb-2 overflow-scroll"  style={{height:"470px"}}>
-							{
-								inProgress.map((item, index) =>{
-									return <CardKanban key={index} values={item} />
-								})
-							}
+						{
+							cards.map((item ,index) => {
+								const {title, dueDate, state, status} = item;
+
+								if(state === "bg-success")
+									return <CardKanban 
+										key={index} 
+										values={{title, dueDate, state, status}} />
+								return null;
+							})
+						}
 						</div>
 					</Row>
 				</Col>
@@ -65,11 +78,17 @@ const KanbanBoard = () => {
 					</Row>
 					<Row>
 						<div className="border-top border-dark pb-2 overflow-scroll" style={{height:"470px"}}>
-							{
-								completed.map((item, index) =>{
-									return <CardKanban key={index} values={item} />
-								})
-							}
+						{
+							cards.map((item ,index) => {
+								const {title, dueDate, state, status} = item;
+
+								if(state === "bg-danger")
+									return <CardKanban 
+										key={index} 
+										values={{title, dueDate, state, status}} />
+								return null;
+							})
+						}
 						</div>
 					</Row>
 				</Col>
