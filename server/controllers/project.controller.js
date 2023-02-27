@@ -34,7 +34,18 @@ const getProjects = (req, res) => {
 		.catch(err => res.status(400).json(err));
 }
 
+// * PUT un proyecto
+const updateProject = (req, res) => {
+	project.findOneAndUpdate(
+		{_id: req.params.id},
+		req.body,
+		{new:true})
+		.then(data => res.status(201).json(data))
+		.catch(err => res.status(400).json(err))
+};
+
 module.exports = {
 	setProject,
-	getProjects
+	getProjects,
+	updateProject
 };
