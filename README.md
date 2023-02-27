@@ -6,12 +6,12 @@ Desafio: Crear un tablero kanban donde los usuarios pueden planificar y administ
 
 ## Cinturon Rojo
 
-- Panel de control: muestra los proyectos en tres columnas según el estado del proyecto.
-- Panel de control: el botón "Iniciar Proyecto" ("start project") debe establecer el estado del proyecto en "En curso".
-- Panel de control: el botón "Mover a Completado" ("Move to complete") debe establecer el estado del proyecto en "Completado"
+- Panel de control: muestra los proyectos en tres columnas según el estado del proyecto. [COMPLETADO]
+- Panel de control: el botón "Iniciar Proyecto" ("start project") debe establecer el estado del proyecto en "En curso".[COMPLETADO]
+- Panel de control: el botón "Mover a Completado" ("Move to complete") debe establecer el estado del proyecto en "Completado"[COMPLETADO]
 - **Validaciones:** 
-  - El proyecto es obligatorio y debe tener 3 caracteres o más.
-  - Se requiere la fecha de vencimiento.
+  - El proyecto es obligatorio y debe tener 3 caracteres o más.[COMPLETADO]
+  - Se requiere la fecha de vencimiento.[COMPLETADO]
 
 ## Cinturon negro
 
