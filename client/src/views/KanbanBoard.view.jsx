@@ -74,7 +74,7 @@ const KanbanBoard = () => {
 				<Col className="border border-dark">
 				<Row>
 						<div className="bg-success text-center">
-							<h2>In Progress</h2>
+							<h2>Conpleted</h2>
 						</div>
 					</Row>
 					<Row>
