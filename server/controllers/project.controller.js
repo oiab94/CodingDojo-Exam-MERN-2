@@ -44,8 +44,16 @@ const updateProject = (req, res) => {
 		.catch(err => res.status(400).json(err))
 };
 
+// * DELETE un proyecto
+const deleteProject = (req, res) => {
+	project.deleteOne({_id: req.params.id})
+		.then(data => res.status(201).json(data))
+		.catch(error => res.status(400).json(data))
+};
+
 module.exports = {
 	setProject,
 	getProjects,
-	updateProject
+	updateProject,
+	deleteProject
 };
