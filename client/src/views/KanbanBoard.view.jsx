@@ -7,6 +7,7 @@ import {
 } from "react-bootstrap"
 import CardKanban from "../components/CardKanban";
 import axios from "axios";
+import { Link } from "react-router-dom"
 
 const KanbanBoard = () => {
 	const [cards, setCards] = useState([])
@@ -95,7 +96,9 @@ const KanbanBoard = () => {
 			</Row>
 			<Row className="border border-top-0 border-dark p-2">
 				<Col>
-					<Button variant="outline-primary">Add New Project</Button>
+					<Button
+						as={Link} to="/projects/new"
+						variant="outline-primary">Add New Project</Button>
 				</Col>
 			</Row>
 		</Container>
