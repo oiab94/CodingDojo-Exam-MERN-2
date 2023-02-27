@@ -13,7 +13,7 @@ const projectSchema = new mongoose.Schema({
 	},
 	state: {
 		type: String,
-		enum: ["bg-warning","bg-succes", "bg-danger"]
+		enum: ["bg-warning","bg-success", "bg-danger"]
 	},
 	status: {
 		type: String,
