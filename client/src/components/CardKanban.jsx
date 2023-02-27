@@ -15,7 +15,11 @@ const CardKanban = (props) => {
 							due.getUTCDate() + " / " +
 							due.getUTCFullYear() }
 						</Card.Text>
-					<Button className={state}>{ status }</Button>
+					<Button 
+						onClick={props.onClick}
+						className={state}>
+							{ status }
+					</Button>
 				</Card.Body>
 			</Card>
 		</>

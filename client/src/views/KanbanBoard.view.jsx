@@ -7,16 +7,54 @@ import {
 } from "react-bootstrap"
 import CardKanban from "../components/CardKanban";
 import axios from "axios";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const KanbanBoard = () => {
 	const [cards, setCards] = useState([])
+	const navigate = useNavigate();
 
+	// * Obtener todos los datos de la DB
 	useEffect(() => {
 		axios.get("http://localhost:8000/api/getProjects")
 			.then(projects => {setCards(projects.data)})
 			.catch(err => console.log(err))
 	}, [])
+
+	// * Manejadores click
+	const startProject = (data) => {
+		const {id, title, dueDate} = data
+		const dataUpdate = {
+			title,
+			dueDate,
+			state:"bg-success",
+			status:"Move to complete"
+		}
+
+		axios.put(
+			"http://localhost:8000/api/updateProject/" + id,
+			dataUpdate)
+			.then(res => navigate(0))
+	}
+
+	const inProgress = (data) => {
+		const {id, title, dueDate} = data;
+		const dataUpdate = {
+			title,
+			dueDate,
+			state:"bg-danger",
+			status:"Remove Project"
+		}
+
+		axios.put(
+			"http://localhost:8000/api/updateProject/" + id,
+			dataUpdate)
+			.then(res => navigate(0))
+	}
+
+	const completed = (data) => {
+		const {id} = data;
+		
+	}
 
 	return (
 		<>
@@ -33,11 +71,13 @@ const KanbanBoard = () => {
 						<div className="border-top border-dark pb-2 overflow-scroll"  style={{height:"470px"}}>
 							{
 								cards.map((item ,index) => {
+									const id = item._id;
 									const {title, dueDate, state, status} = item;
 
 									if(state === "bg-warning")
 										return <CardKanban 
-											key={index} 
+											key={index}
+											onClick={(e) => startProject({ id, title, dueDate })}
 											values={{title, dueDate, state, status}} />
 									return null;
 								})
@@ -57,11 +97,13 @@ const KanbanBoard = () => {
 						<div className="border-top border-dark pb-2 overflow-scroll"  style={{height:"470px"}}>
 						{
 							cards.map((item ,index) => {
+								const id = item._id;
 								const {title, dueDate, state, status} = item;
 
 								if(state === "bg-success")
 									return <CardKanban 
 										key={index} 
+										onClick={() => inProgress({id, title, dueDate})}
 										values={{title, dueDate, state, status}} />
 								return null;
 							})
