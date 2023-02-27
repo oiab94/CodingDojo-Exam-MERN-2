@@ -53,7 +53,10 @@ const KanbanBoard = () => {
 
 	const completed = (data) => {
 		const {id} = data;
-		
+
+		axios.delete(
+			"http://localhost:8000/api/deleteProject/" + id)
+			.then(res => navigate(0))
 	}
 
 	return (
@@ -123,11 +126,13 @@ const KanbanBoard = () => {
 						<div className="border-top border-dark pb-2 overflow-scroll" style={{height:"470px"}}>
 						{
 							cards.map((item ,index) => {
+								const id = item._id;
 								const {title, dueDate, state, status} = item;
 
 								if(state === "bg-danger")
 									return <CardKanban 
 										key={index} 
+										onClick={() => completed({id})}
 										values={{title, dueDate, state, status}} />
 								return null;
 							})
