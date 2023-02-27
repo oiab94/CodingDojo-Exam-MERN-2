@@ -19,3 +19,6 @@ app.use(cors());
 
 // * Conexion a la DB
 require("./configs/mongoose.config");
+
+// * Conexion a las rutas de la API
+require("./routes/project.routes")(app);
